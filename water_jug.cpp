@@ -67,10 +67,10 @@ void rules(int x, int y)
     
 }
 
-void water_jug(int x, int y)
+void water_jug(int x, int y, int target)
 {
     map1[{x, y}] = true;
-    while(x != 4)
+    while(x != target)
     {
         rules(x, y);
         x = nx;
@@ -85,5 +85,7 @@ void water_jug(int x, int y)
 
 int main() {
     
-    water_jug(0, 0);
+    int k;
+    cin >> k;
+    water_jug(0, 0, k);
 }
