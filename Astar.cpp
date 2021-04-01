@@ -39,17 +39,12 @@ void Astar(vector<pi> adj[], char src, char goal)
         }
         
         src = node.second;
-        int i = 0, j, k, n = adj[src].size();
-        
+
         for(auto it = adj[src].begin(); it != adj[src].end(); it ++)
         {
             int cost1 = it -> first + heru[it -> second] - heru[src] + node.first;
-            i ++;
-            
+           
             pq.push(make_pair(cost1, it -> second));
-            
-            if(i >= n)
-                break;
         }
     }
 
